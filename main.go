@@ -8,9 +8,7 @@ import (
 )
 
 func main() {
-	//编译linux gox -os="linux"
-	//编译windows gox -os="windows"
-	//编译darwin gox -os="darwin"
+	//编译 gox -os="linux windows darwin" -output="build"
 	gin.SetMode(os.Getenv(gin.ReleaseMode))
 	model.InitModel()
 	router.InitRouter()
