@@ -20,18 +20,10 @@
       </div>
     </a-layout-content>
     <a-layout-footer style="text-align: center">
-      <img style="width: 150px" :src="qrcode" />
-      <div>
-        一个橙子出品,
-        上边是我的微信公众号。这个版本提供给网友折腾，请勿用于非法用途.
-      </div>
+      <div>公众号一个橙子pro。这个版本提供给网友折腾，请勿用于非法用途.</div>
     </a-layout-footer>
   </a-layout>
 </template>
-<script lang="ts" setup>
-import qrcode from "@/assets/da428b3b6d6e058eb738e6b77a08e9b.jpg";
-</script>
-
 <style>
 .site-layout-content {
   min-height: 280px;
