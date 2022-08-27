@@ -13,6 +13,19 @@ http://online.bianbingdang.com/
 
 本站只用作演示、请勿用于个人真实生产，数据可能随时被删除
 
+# 设置登录项，网站页面文字配置
+在文件根目录下设置，`app.ini`配置如下
+```ini
+[user]
+username =1
+password = 1
+
+[config]
+title =
+qrcode_link =
+description =
+```
+
 # 打包教程
 安装 
 ```shell
