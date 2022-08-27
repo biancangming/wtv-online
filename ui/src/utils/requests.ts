@@ -7,7 +7,7 @@ import { message } from "ant-design-vue";
 import { watchEffect, type Ref } from "vue";
 import { watch } from "vue";
 
-const { useAxiosRequest } = createAxios({
+export const { useAxiosRequest } = createAxios({
   instanceConfig: {
     baseURL: import.meta.env.VITE_LIVE_BASE as string,
   },

@@ -8,7 +8,7 @@ import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 
 // https://vitejs.dev/config/
-export default ({ command, mode }: ConfigEnv): UserConfigExport => {
+export default ({ mode }: ConfigEnv): UserConfigExport => {
   const root = __dirname;
   const env = loadEnv(mode, root);
 
@@ -18,7 +18,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     build: {
       emptyOutDir: true,
       assetsInlineLimit: 1024 * 128,
-      assetsDir: ""
+      assetsDir: "",
     },
     plugins: [
       vue(),
@@ -39,13 +39,13 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     server: {
       proxy: {
         "/api": {
-          target: "http://127.0.0.1:8888/v1/api/",
+          target: "http://127.0.0.1:1999/api/",
           ws: true,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),
         },
         "/static": {
-          target: "http://127.0.0.1:8888/",
+          target: "http://127.0.0.1:1999/",
           ws: true,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),

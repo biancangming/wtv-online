@@ -3,7 +3,7 @@
     <a-layout-header>
       <div class="logo" />
       <div style="font-size: 18px; color: aliceblue">
-        超级文本链接分享工具 - 公众号 一个橙子pro
+        {{ data.title }}
       </div>
     </a-layout-header>
     <a-layout-content>
@@ -20,10 +20,16 @@
       </div>
     </a-layout-content>
     <a-layout-footer style="text-align: center">
-      <div>公众号一个橙子pro。这个版本提供给网友折腾，请勿用于非法用途.</div>
+      <img width="200" :src="data.qrcodeLink" />
+      <div>{{ data.description }}</div>
     </a-layout-footer>
   </a-layout>
 </template>
+<script setup lang="ts">
+import { useConfig } from "@/api/config";
+
+const { data } = useConfig();
+</script>
 <style>
 .site-layout-content {
   min-height: 280px;

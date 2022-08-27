@@ -50,6 +50,15 @@ func InitRouter() {
 			g.GET("/get", v1.GetShareUrlData)
 			g.GET("/urls", v1.GetShareUrls)
 		}
+
+		// 配置
+		{
+			g := v1g.Group("/config")
+			g.GET("isRequiredLogin", v1.IsRequiredLogin)
+			g.GET("config", v1.GetConfigData)
+			g.POST("login", v1.Login)
+		}
+
 	}
 
 	r.Run(":1999")

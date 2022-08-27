@@ -82,7 +82,7 @@ export function createAxios(options: HowVesAxiosOptions) {
     options?: HowVesExRequestOptions
   ) {
     const { isDebounce = true, defaultVal = {} } = options || {};
-    
+
     let lastConf = config; //最后一次发出请求的配置
     const isLoading = shallowRef(false);
     const isFinished = shallowRef(false);
@@ -138,8 +138,8 @@ export function createAxios(options: HowVesAxiosOptions) {
         path: {},
       }
     ): Promise<T> => {
-      lastConf = config
-      
+      lastConf = config;
+
       loading(true);
 
       if (isDebounce) {
@@ -164,10 +164,10 @@ export function createAxios(options: HowVesAxiosOptions) {
         params: config.params,
         data: config.data,
       });
-    
+
     // 重新加载上次请求
-    function reload(){
-      execute(lastConf)
+    function reload() {
+      execute(lastConf);
     }
 
     return {
