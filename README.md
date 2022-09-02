@@ -9,7 +9,7 @@ https://mp.weixin.qq.com/s/pK-8EbJ_4s3C8FsFgXSb3w
 # 演示网站
 
 
-http://online.bianbingdang.com/
+http://online.frpsss.tk/#/home
 
 本站只用作演示、请勿用于个人真实生产，数据可能随时被删除
 
