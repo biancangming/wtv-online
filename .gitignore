@@ -2,3 +2,12 @@
 /gorm.db
 /wtv-online_linux_amd64
 ./ui/node_modules
+/wtv-online_darwin_amd64
+/wtv-online_darwin_arm64
+/wtv-online_linux_386
+/wtv-online_linux_arm
+/wtv-online_linux_arm64
+/wtv-online_linux_ppc64le
+/wtv-online_linux_s390x
+/wtv-online_windows_386.exe
+/wtv-online_windows_amd64.exe

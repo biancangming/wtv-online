@@ -8,13 +8,14 @@ type Share struct {
 	Uuid      string `json:"uuid" gorm:"type:varchar(100);primaryKey"`
 	Content   string `json:"content" gorm:"type:text"` // 填入的内容
 	FileType  string `json:"fileType" gorm:"type:text"`
+	Mark      string `json:"mark" gorm:"type:text"` // 备注
 	UseStatus int    `json:"useStatus" gorm:"type:text"`
 }
 
 func GetShareUrl(uuid string) (Share, error) {
 	s := Share{}
 	var err error
-	err = dbs.Debug().Model(&Share{}).Select([]string{"content", "uuid", "use_status", "file_type"}).Find(&s, "uuid = ?", uuid).Limit(1).Error
+	err = dbs.Debug().Model(&Share{}).Select([]string{"content", "uuid", "use_status", "file_type", "mark"}).Find(&s, "uuid = ?", uuid).Limit(1).Error
 
 	if err != nil {
 		return s, err
@@ -25,7 +26,7 @@ func GetShareUrl(uuid string) (Share, error) {
 func GetShareUrls(us int) ([]Share, error) {
 	s := new([]Share)
 	if err := dbs.Model(&Share{}).
-		Select([]string{"uuid", "file_type"}).
+		Select([]string{"uuid", "file_type", "mark"}).
 		Find(&s, "use_status = ?", us).Error; err != nil {
 		return *s, err
 	}

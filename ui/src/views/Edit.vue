@@ -9,6 +9,9 @@
     </a-row>
     <a-spin tip="Loading..." :spinning="contentEditSpinning">
       <a-form :label-col="{ span: 2 }" style="margin-top: 10px">
+        <a-form-item label="备注">
+          <a-input placeholder="设置备注更容易区分直播源" v-model:value="modelRef.mark"></a-input>
+        </a-form-item>
         <a-form-item label="文本内容" v-bind="validateInfos.content">
           <a-textarea
             v-model:value="modelRef.content"
@@ -71,10 +74,11 @@ onMounted(() => {
       uuid: route.query.uuid,
     },
   }).then((res) => {
-    const { uuid, content, fileType } = (res.data || {}) as any;
+    const { uuid, content, fileType, mark} = (res.data || {}) as any;
     modelRef.uuid = uuid;
     modelRef.content = content;
     modelRef.fileType = fileType;
+    modelRef.mark = mark;
     contentEditSpinning.value = false;
   });
 });
@@ -84,6 +88,7 @@ const modelRef = reactive({
   public: false,
   content: "",
   fileType: "",
+  mark: "",
 });
 const rulesRef = reactive({
   fileType: [

@@ -61,8 +61,12 @@ const activeKey = ref("1");
 const { push } = useRouter();
 const columns = [
   {
-    title: "链接ID",
+    title: "ID",
     dataIndex: "uuid",
+  },
+  {
+    title: "描述",
+    dataIndex: "mark",
   },
   // {
   //   title: "更新时间",

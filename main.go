@@ -28,17 +28,17 @@ func InitAppIni() {
 	description := configSection.Key("description").MustString("一个橙子出品, 上边是我的微信公众号，本网站支持私有部署，https://github.com/biancangming/wtv-online 。本网站是本人纯手工制作，请勿无脑攻击，请勿使用本站发布皇都读、政治敏感、道德沦丧等信息，本人一经发现立即删除。")
 
 	model.ConfigData = model.Config{
-		Username: username,
-		Password: password,
-		Title: title,
-		QrcodeLink: qrcodeLink,
+		Username:    username,
+		Password:    password,
+		Title:       title,
+		QrcodeLink:  qrcodeLink,
 		Description: description,
 	}
 	fmt.Println(model.ConfigData)
 }
 
 func main() {
-	//编译 gox -os="linux windows darwin" -output="build"
+	//编译 gox -os="linux windows darwin"
 	gin.SetMode(os.Getenv(gin.ReleaseMode))
 	InitAppIni()
 	model.InitModel()
